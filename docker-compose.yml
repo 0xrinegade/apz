@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 4G
+    ulimits:
+      nofile:
+        soft: 100000
+        hard: 100000
